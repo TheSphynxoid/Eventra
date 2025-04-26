@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="eventra">
+    <output-path>$PROJECT_DIR$/out/artifacts/eventra</output-path>
+    <root id="root">
+      <element id="archive" name="eventmanager.jar">
+        <element id="module-output" name="eventmanager" />
+      </element>
+    </root>
+  </artifact>
+</component>
