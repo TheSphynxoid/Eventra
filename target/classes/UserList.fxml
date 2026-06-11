@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controllers.UserListController"
+            stylesheets="@style.css">
+
+    <!-- Top: barre avec titre, recherche et bouton ajouter -->
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="toolbar" style="-fx-padding: 10;">
+            <Label text="Liste des utilisateurs" styleClass="title-label"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="searchField" promptText="Recherche..." styleClass="search-field"/>
+            <Button fx:id="addUserButton" text="+ Ajouter" onAction="#goToAddUser"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        </HBox>
+    </top>
+
+    <!-- Centre : TableView réduite -->
+    <center>
+        <TableView fx:id="userTable" prefWidth="1000" prefHeight="400" styleClass="styled-table">
+            <columns>
+                <TableColumn fx:id="idCol"       text="ID"       prefWidth="60"/>
+                <TableColumn fx:id="nomCol"      text="Nom"      prefWidth="150"/>
+                <TableColumn fx:id="prenomCol"   text="Prénom"   prefWidth="150"/>
+                <TableColumn fx:id="emailCol"    text="Email"    prefWidth="200"/>
+                <TableColumn fx:id="telephoneCol" text="Téléphone" prefWidth="150"/>
+                <TableColumn fx:id="roleCol"     text="Rôle"     prefWidth="120"/>
+                <TableColumn fx:id="statutCol"   text="Statut"   prefWidth="100"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <!-- Bottom : boutons Modifier/Supprimer alignés à droite -->
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 10;">
+            <Button fx:id="editButton" text="Modifier" onAction="#modifierUtilisateur"
+                    style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+            <Button fx:id="deleteButton" text="Supprimer" onAction="#supprimerUtilisateur"
+                    style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

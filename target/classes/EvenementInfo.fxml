@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.EventControllerInfo">
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
+    <children>
+        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" styleClass="custom-scroll-pane" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+            <content>
+                <VBox alignment="TOP_CENTER" prefHeight="974.0" prefWidth="900.0" spacing="15" styleClass="main-container">
+                    <padding>
+                        <Insets bottom="20" left="20" right="20" top="20" />
+                    </padding>
+
+                    <HBox alignment="CENTER_LEFT" spacing="15">
+                        <Label styleClass="header-label" text="Détails de l'Événement" />
+                        <Button fx:id="retourBtn" onAction="#retour" styleClass="cancel-button" text="Retour" />
+                    </HBox>
+                    <Separator styleClass="custom-separator" />
+                    <GridPane alignment="CENTER" hgap="10" styleClass="form-grid" vgap="10">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="30" />
+                            <ColumnConstraints percentWidth="70" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                     <RowConstraints />
+                        </rowConstraints>
+
+                        <!-- Titre -->
+                        <Label styleClass="form-label" text="Titre :" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="titreTF" editable="false" styleClass="text-input" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                        <!-- Description -->
+                        <Label styleClass="form-label" text="Description :" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextArea fx:id="descriptionTA" editable="false" prefHeight="100" prefWidth="400" styleClass="text-input" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <!-- Date Début -->
+                        <Label styleClass="form-label" text="Date Début :" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <DatePicker fx:id="dateDebutPicker" editable="false" styleClass="date-input" />
+                            <Spinner fx:id="heureDebutSpinner" editable="false" prefWidth="60" styleClass="time-input" />
+                            <Label styleClass="time-separator" text=":" />
+                            <Spinner fx:id="minuteDebutSpinner" editable="false" prefWidth="60" styleClass="time-input" />
+                        </HBox>
+
+                        <!-- Date Fin -->
+                        <Label styleClass="form-label" text="Date Fin :" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                            <DatePicker fx:id="dateFinPicker" editable="false" styleClass="date-input" />
+                            <Spinner fx:id="heureFinSpinner" editable="false" prefWidth="60" styleClass="time-input" />
+                            <Label styleClass="time-separator" text=":" />
+                            <Spinner fx:id="minuteFinSpinner" editable="false" prefWidth="60" styleClass="time-input" />
+                        </HBox>
+
+                        <!-- Organisateur -->
+                        <Label styleClass="form-label" text="Organisateur :" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <TextField fx:id="organisateurField" editable="false" styleClass="text-input" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                        <!-- Carte -->
+                        <Label styleClass="form-label" text="Carte :" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <WebView fx:id="mapWebView" minHeight="200" minWidth="400" prefHeight="200" prefWidth="400" styleClass="map-view" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                        <!-- Adresse -->
+                        <Label styleClass="form-label" text="Adresse :" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                        <TextField fx:id="adresseField" editable="false" styleClass="text-input" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+                        <!-- Coordonnées -->
+                        <Label styleClass="form-label" text="Latitude :" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                        <TextField fx:id="latitudeField" editable="false" styleClass="text-input" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label styleClass="form-label" text="Longitude :" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                        <TextField fx:id="longitudeField" editable="false" styleClass="text-input" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+
+                        <!-- Capacité -->
+                        <Label styleClass="form-label" text="Capacité :" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                        <TextField fx:id="capaciteField" editable="false" styleClass="text-input" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+
+                        <!-- Catégorie et Visibilité -->
+                        <Label styleClass="form-label" text="Catégorie :" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+                        <TextField fx:id="categorieField" editable="false" styleClass="text-input" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <Label styleClass="form-label" text="Visibilité :" GridPane.columnIndex="0" GridPane.rowIndex="11" />
+                        <TextField fx:id="visibiliteField" editable="false" styleClass="text-input" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                    </GridPane>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

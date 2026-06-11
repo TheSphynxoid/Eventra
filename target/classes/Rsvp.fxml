@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="285.0" prefWidth="372.0" spacing="15" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.TicketController">
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Achat de Ticket" />
+
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="40" />
+            <ColumnConstraints percentWidth="60" />
+        </columnConstraints>
+
+        <children>
+            <Label text="N° Carte" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="num_carte" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label text="CVV" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="cvv" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Nom et Prenom" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="Quantite" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Spinner fx:id="quantityField" prefHeight="26.0" prefWidth="196.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Label text="Prix:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <Label fx:id="prixField" text=" " prefHeight="26.0" prefWidth="196.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        </children>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+
+    <Button fx:id="confirm" onAction="#handleConfirm" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;" text="Confirmer l'achat" />
+</VBox>

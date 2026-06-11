@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane fx:controller="org.example.controllers.TicketViewController" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" style="-fx-background-color: #f4f4f4;">
+    <top>
+        <HBox alignment="CENTER" style="-fx-background-color: #0078d7; -fx-padding: 15;">
+            <Label text="GESTION DES TICKETS" style="-fx-font-size: 20px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TableView fx:id="ticketsTable" style="-fx-border-color: #dcdcdc; -fx-border-width: 1;">
+            <columns>
+                <TableColumn text="ID Ticket" prefWidth="100" style="-fx-font-weight: bold;">
+                    <cellValueFactory><PropertyValueFactory property="ticketID"/></cellValueFactory>
+                    <style>
+                        -fx-background-color: #0078d7;
+                        -fx-text-fill: white;
+                        -fx-border-color: #dcdcdc;
+                    </style>
+                </TableColumn>
+                <TableColumn text="Événement" prefWidth="150" style="-fx-font-weight: bold;">
+                    <cellValueFactory><PropertyValueFactory property="eventID"/></cellValueFactory>
+                    <style>
+                        -fx-background-color: #0078d7;
+                        -fx-text-fill: white;
+                        -fx-border-color: #dcdcdc;
+                    </style>
+                </TableColumn>
+                <TableColumn text="Client" prefWidth="150" style="-fx-font-weight: bold;">
+                    <cellValueFactory><PropertyValueFactory property="clientID"/></cellValueFactory>
+                    <style>
+                        -fx-background-color: #0078d7;
+                        -fx-text-fill: white;
+                        -fx-border-color: #dcdcdc;
+                    </style>
+                </TableColumn>
+                <TableColumn text="Quantité" prefWidth="100" style="-fx-font-weight: bold;">
+                    <cellValueFactory><PropertyValueFactory property="quantity"/></cellValueFactory>
+                    <style>
+                        -fx-background-color: #0078d7;
+                        -fx-text-fill: white;
+                        -fx-border-color: #dcdcdc;
+                    </style>
+                </TableColumn>
+                <TableColumn text="Type" prefWidth="150" style="-fx-font-weight: bold;">
+                    <cellValueFactory><PropertyValueFactory property="type"/></cellValueFactory>
+                    <style>
+                        -fx-background-color: #0078d7;
+                        -fx-text-fill: white;
+                        -fx-border-color: #dcdcdc;
+                    </style>
+                </TableColumn>
+                <TableColumn text="Date Achat" prefWidth="150" style="-fx-font-weight: bold;">
+                    <cellValueFactory><PropertyValueFactory property="purchaseDate"/></cellValueFactory>
+                    <style>
+                        -fx-background-color: #0078d7;
+                        -fx-text-fill: white;
+                        -fx-border-color: #dcdcdc;
+                    </style>
+                </TableColumn>
+            </columns>
+            <style>
+                -fx-font-size: 14px;
+            </style>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="15" alignment="CENTER_RIGHT" style="-fx-background-color: #e5e5e5; -fx-padding: 10;">
+            <Button text="MODIFIER" fx:id="editButton" style="
+                -fx-font-weight: bold;
+                -fx-font-size: 14px;
+                -fx-background-color: #0078d7;
+                -fx-text-fill: white;
+                -fx-padding: 8 15 8 15;
+                -fx-min-width: 120;
+                -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);
+            " onAction="#handleEditTicket"/>
+            <Button text="SUPPRIMER" fx:id="deleteButton" style="
+                -fx-font-weight: bold;
+                -fx-font-size: 14px;
+                -fx-background-color: #d83b01;
+                -fx-text-fill: white;
+                -fx-padding: 8 15 8 15;
+                -fx-min-width: 120;
+                -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);
+            " onAction="#handleDeleteTicket"/>
+        </HBox>
+    </bottom>
+</BorderPane>

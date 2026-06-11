@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane hgap="10" prefHeight="456.0" prefWidth="438.0" stylesheets="@style.css" vgap="10"
+          xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="org.example.controllers.SignupController">
+
+    <!-- Titre -->
+    <Label prefHeight="45.0" prefWidth="180.0" styleClass="header-label"
+           text="Inscription" GridPane.columnIndex="1" GridPane.columnSpan="2" />
+
+    <!-- Champs formulaire -->
+    <Label text="Nom:" GridPane.rowIndex="1" />
+    <TextField fx:id="nomField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+    <Label text="Prénom:" GridPane.rowIndex="2" />
+    <TextField fx:id="prenomField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <Label text="Email:" GridPane.rowIndex="3" />
+    <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+    <Label text="Téléphone:" GridPane.rowIndex="4" />
+    <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+    <Label text="Mot de passe:" GridPane.rowIndex="6" />
+    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+    <Label text="Confirmer mdp:" GridPane.rowIndex="7" />
+    <PasswordField fx:id="confirmField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+    <!-- Boutons Inscription + Retour -->
+    <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="8">
+        <Button text="S'inscrire" onAction="#handleSignup"
+                prefHeight="25.0" prefWidth="95.0" />
+        <Button text="Retour" onAction="#handleRetour"
+                prefHeight="25.0" prefWidth="95.0" />
+    </HBox>
+
+    <!-- Message d'erreur -->
+    <Label fx:id="messageLabel" textFill="red" GridPane.columnSpan="2" GridPane.rowIndex="10" />
+
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+    </columnConstraints>
+
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+
+</GridPane>

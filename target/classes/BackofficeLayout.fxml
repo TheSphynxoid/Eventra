@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.LayoutController">
+
+    <!-- Top bar -->
+    <top>
+        <HBox alignment="CENTER_RIGHT" prefHeight="60" spacing="10" style="-fx-padding: 10; -fx-background-color: #2c3e50;">
+
+            <!-- App title -->
+            <Label style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="Eventra" />
+
+            <!-- Spacer -->
+            <Region HBox.hgrow="ALWAYS" />
+
+            <!-- Clickable profile image -->
+            <ImageView fx:id="topbarProfileImage" fitHeight="36" fitWidth="36" onMouseClicked="#goProfile" pickOnBounds="true" style="-fx-cursor: hand; -fx-background-radius: 18; -fx-border-radius: 18;" />
+
+            <!-- Clickable user name -->
+            <Label fx:id="profileLabel" onMouseClicked="#showUserMenu" style="-fx-text-fill: white; -fx-cursor: hand; -fx-font-size: 14px;" />
+        </HBox>
+    </top>
+
+    <!-- Sidebar Navigation -->
+    <left>
+        <VBox fx:id="sidebar" alignment="TOP_LEFT" prefWidth="240.0" spacing="10" styleClass="sidebar">
+            <Button fx:id="btnDashboard" onAction="#goDashboard" text="Tableau de bord" />
+            <Button fx:id="btnUsers" onAction="#goUsers" text="Utilisateurs" />
+            <Button fx:id="btnEvent" onAction="#goEvents" text="Evenements" />
+            <Button fx:id="btnOrganizateur" onAction="#goOrganizer" text="Organisateur" />
+            <Button fx:id="btnTickets" onAction="#goTickets" text="Tickets" />
+            <Button fx:id="btnReclamations" onAction="#goReclamations" text="Réclamations" />
+            <Button fx:id="btnSponsors" onAction="#goSponsors" text="Demandes Sponsors" />
+            <Region VBox.vgrow="ALWAYS" />
+            <Button fx:id="btnLogout" onAction="#logout" text="Déconnexion" />
+        </VBox>
+    </left>
+
+    <!-- Main content -->
+    <center>
+        <StackPane fx:id="contentPane" />
+    </center>
+</BorderPane>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane style="-fx-background-color: #F5F5F5;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.AjoutReclamationController">
+
+    <VBox alignment="CENTER" layoutX="50" layoutY="20" prefWidth="600" spacing="20">
+        <padding>
+            <Insets bottom="30" left="30" right="30" top="30" />
+        </padding>
+
+        <!-- Titre -->
+        <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #37474F; -fx-alignment: center;" text="Ajouter une Réclamation" />
+
+        <!-- Formulaire -->
+        <GridPane hgap="15" vgap="15">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" minWidth="120" />
+                <ColumnConstraints prefWidth="300" />
+            </columnConstraints>
+
+            <!-- Type de réclamation -->
+            <Label style="-fx-font-weight: bold;" text="Type de réclamation :" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <ComboBox fx:id="typeComboBox" prefWidth="250" promptText="Sélectionner un type" style="-fx-background-color: #FFFFFF; -fx-border-color: #90A4AE; -fx-border-radius: 5; -fx-padding: 5px;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <!-- Description -->
+            <Label style="-fx-font-weight: bold;" text="Description :" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextArea fx:id="descriptionField" prefRowCount="4" prefWidth="250" promptText="Décrivez votre réclamation" style="-fx-background-color: #FFFFFF; -fx-border-color: #90A4AE; -fx-border-radius: 5; -fx-padding: 5px;" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Button onAction="#handleAideClick" text="Besoin d'aide ?" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+
+            <!-- Date de réclamation -->
+            <Label style="-fx-font-weight: bold;" text="Date de réclamation :" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <DatePicker fx:id="datePickerReclamation" prefWidth="250" style="-fx-background-color: #FFFFFF; -fx-border-color: #90A4AE; -fx-border-radius: 5; -fx-padding: 5px;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <!-- Boutons -->
+        <HBox alignment="CENTER" spacing="20">
+            <Button onAction="#ajouterReclamation" prefWidth="150" style="-fx-background-color: #1976D2; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 10px 20px;" text="Ajouter" />
+            <Button onAction="#allerVersGestion" prefWidth="200" style="-fx-background-color: #00BFAE; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 10px 20px;" text="Voir mes Réclamations" />
+            <Button onAction="#clearFields" prefWidth="200" style="-fx-background-color: #FF8A65; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 10px 20px;" text="Réinitialiser les champs" />
+        </HBox>
+    </VBox>
+</AnchorPane>

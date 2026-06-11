@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controllers.ParticipantController"
+      spacing="20" alignment="TOP_CENTER" style="-fx-background-color: #f5f5f5; -fx-padding: 30;">
+
+    <!-- Titre -->
+    <Label text="Événements disponibles" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <!-- Filtres -->
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Filtrer par catégorie:" style="-fx-font-weight: bold;"/>
+        <ComboBox fx:id="cbCategories" style="-fx-pref-width: 250;"/>
+        <Button text="Filtrer" onAction="#filtrerParCategorie" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <!-- Contenu principal -->
+    <HBox spacing="20" alignment="TOP_CENTER">
+        <!-- Liste des événements -->
+        <ListView fx:id="lvEvenements" style="-fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);"
+                  prefWidth="350" prefHeight="400"/>
+
+        <!-- Détails de l'événement -->
+        <VBox fx:id="detailsContainer" spacing="10" prefWidth="350">
+            <Label text="Détails de l'événement" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #3498db;"/>
+
+            <Label text="Titre:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblTitre" style="-fx-font-size: 14; -fx-wrap-text: true;"/>
+
+            <Label text="Description:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblDescription" style="-fx-wrap-text: true;"/>
+
+            <Label text="Dates:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblDates"/>
+
+            <Label text="Adresse:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblAdresse" style="-fx-wrap-text: true;"/>
+
+            <Label fx:id="lblCapacite" style="-fx-font-style: italic;"/>
+
+            <Button text="Participer à cet événement" onAction="#participerEvenement"
+                    style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8;"/>
+        </VBox>
+    </HBox>
+</VBox>

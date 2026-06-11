@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane style="-fx-background-color: linear-gradient(to bottom right, #f8f9fa, #e9ecef);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.thesphynx.controllers.HomeController">
+
+    <!-- Header avec logo et titre -->
+    <HBox alignment="CENTER_LEFT" spacing="15" AnchorPane.leftAnchor="30" AnchorPane.rightAnchor="30" AnchorPane.topAnchor="20">
+        <ImageView fitHeight="80" fitWidth="80" preserveRatio="true">
+            <Image url="@/com/thesphynx/images/logo.png" />
+            <effect>
+                <DropShadow color="#00000033" radius="5" />
+            </effect>
+        </ImageView>
+        <Label style="-fx-font-size: 38px; -fx-font-weight: bold; -fx-text-fill: #3498db;" text="EVENTRA">
+            <font>
+                <Font name="System Bold" size="38.0" />
+            </font>
+        </Label>
+    </HBox>
+
+    <!-- Contenu principal -->
+    <StackPane AnchorPane.bottomAnchor="30" AnchorPane.leftAnchor="30" AnchorPane.rightAnchor="30" AnchorPane.topAnchor="120">
+        <!-- Fond avec effet de profondeur -->
+        <Rectangle arcHeight="30" arcWidth="30" fill="#ffffff" height="600" width="1000">
+            <effect>
+                <DropShadow color="#00000040" radius="10" spread="0.05" />
+            </effect>
+        </Rectangle>
+
+        <VBox alignment="CENTER" spacing="40">
+            <!-- Titre principal -->
+            <Label style="-fx-font-size: 42px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Gestion d'Événements">
+                <font>
+                    <Font name="System Bold" size="42.0" />
+                </font>
+                <effect>
+                    <DropShadow color="#00000022" offsetY="2" radius="2" />
+                </effect>
+            </Label>
+
+            <!-- Sous-titre -->
+            <Label style="-fx-font-size: 18px; -fx-text-fill: #7f8c8d; -fx-font-style: italic;" text="Planifiez, organisez et participez à des événements en toute simplicité" />
+
+            <!-- Conteneur pour les boutons et images -->
+            <HBox alignment="CENTER" spacing="60">
+                <!-- Option Organisateur -->
+                <VBox alignment="CENTER" maxWidth="350" spacing="20">
+                    <ImageView fitHeight="200" fitWidth="200" preserveRatio="true">
+                        <Image url="@/com/thesphynx/images/planner.png" />
+                    </ImageView>
+                    <Button fx:id="btnOrganisateur" onAction="#chargerInterfaceOrganisateur" style="-fx-background-color: #3498db; -fx-background-radius: 30; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 18px; -fx-pref-width: 300px; -fx-pref-height: 60px; -fx-cursor: hand;" text="Je suis un Organisateur">
+                        <graphic>
+                            <ImageView fitHeight="30" fitWidth="30">
+                                <Image url="@/com/thesphynx/images/planner.png" />
+                            </ImageView>
+                        </graphic>
+                        <effect>
+                            <DropShadow color="#00000066" radius="8" />
+                        </effect>
+                    </Button>
+                    <Label style="-fx-font-size: 16px; -fx-text-fill: #34495e;" text="Créez et gérez vos événements" textAlignment="CENTER" wrapText="true" />
+                </VBox>
+
+                <!-- Option Participant -->
+                <VBox alignment="CENTER" maxWidth="350" spacing="20">
+                    <ImageView fitHeight="200" fitWidth="200" preserveRatio="true">
+                        <Image url="@/com/thesphynx/images/participant.png" />
+                    </ImageView>
+                    <Button fx:id="btnParticipant" onAction="#chargerInterfaceParticipant" prefHeight="62.0" prefWidth="308.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 30; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 18px; -fx-pref-width: 300px; -fx-pref-height: 60px; -fx-cursor: hand;" text="Je suis un Participant">
+                        <graphic>
+                            <ImageView fitHeight="30" fitWidth="30">
+                                <Image url="@/com/thesphynx/images/participant.png" />
+                            </ImageView>
+                        </graphic>
+                        <effect>
+                            <DropShadow color="#00000066" radius="8" />
+                        </effect>
+                    </Button>
+                    <Label style="-fx-font-size: 16px; -fx-text-fill: #34495e;" text="Découvrez et rejoignez des événements" textAlignment="CENTER" wrapText="true" />
+                </VBox>
+            </HBox>
+
+            <!-- Pied de page -->
+            <HBox alignment="CENTER" spacing="10">
+                <padding>
+                    <Insets top="30" />
+                </padding>
+                <Label style="-fx-font-size: 14px; -fx-text-fill: #95a5a6;" text="© 2025 | Tous droits réservés" />
+            </HBox>
+        </VBox>
+    </StackPane>
+
+    <!-- Animation d'arrière-plan subtile -->
+    <ImageView fx:id="gifBackground" fitHeight="300" fitWidth="300" opacity="0.1" preserveRatio="true" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0">
+        <Image url="@/com/thesphynx/images/gif.gif" />
+    </ImageView>
+</AnchorPane>

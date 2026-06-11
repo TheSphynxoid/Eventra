@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.controllers.ModifierReclamationController"
+      alignment="CENTER"
+      spacing="20" style="-fx-background-color: #f0f4f8;">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Modifier une Réclamation"
+           style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #1976D2;"/>
+
+    <!-- Email -->
+    <TextField fx:id="emailField" promptText="Email du client" prefWidth="300"
+               style="-fx-background-color: white; -fx-border-color: #90A4AE; -fx-border-radius: 5; -fx-padding: 8;"/>
+
+    <!-- ID Client (lecture seule) -->
+    <TextField fx:id="idClientField" promptText="ID du client" prefWidth="300" editable="false"
+               style="-fx-background-color: white; -fx-border-color: #90A4AE; -fx-border-radius: 5; -fx-padding: 8;"/>
+
+    <!-- Type -->
+    <ComboBox fx:id="typeComboBox" promptText="Type de réclamation" prefWidth="300"
+              style="-fx-background-color: white; -fx-border-color: #90A4AE; -fx-border-radius: 5; -fx-padding: 8;"/>
+
+    <!-- Description -->
+    <TextArea fx:id="descriptionField" promptText="Description"
+              prefRowCount="4" prefWidth="300" wrapText="true"
+              style="-fx-background-color: white; -fx-border-color: #90A4AE; -fx-border-radius: 5; -fx-padding: 8;"/>
+
+    <!-- Date -->
+    <DatePicker fx:id="datePicker" promptText="Date de réclamation" prefWidth="300"
+                style="-fx-background-color: white; -fx-border-color: #90A4AE; -fx-border-radius: 5; -fx-padding: 8;"/>
+
+    <!-- État -->
+    <ComboBox fx:id="etatCombo" promptText="État" prefWidth="300" disable="true"
+              style="-fx-background-color: white; -fx-border-color: #90A4AE; -fx-border-radius: 5; -fx-padding: 8;"/>
+
+    <!-- Boutons -->
+    <HBox spacing="15" alignment="CENTER" style="-fx-padding: 20;">
+        <Button text="Enregistrer" onAction="#enregistrerModification"
+                style="-fx-background-color: #1976D2; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 10 20; -fx-hover-color: #1565C0;"/>
+        <Button text="Annuler" onAction="#fermerFenetre"
+                style="-fx-background-color: #FF8A65; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 10 20; -fx-hover-color: #E64A19;"/>
+    </HBox>
+
+</VBox>

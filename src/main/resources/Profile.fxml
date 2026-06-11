@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.example.controllers.ProfileController"
+           style="-fx-background-color: #ecf0f1;">
+
+    <VBox alignment="CENTER" spacing="20">
+
+        <VBox spacing="15" alignment="CENTER"
+              style="-fx-padding: 30; -fx-background-color: white; -fx-background-radius: 10;
+                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 4);"
+              maxWidth="500">
+
+            <ImageView fx:id="profileImageView"
+                       fitHeight="100" fitWidth="100"
+                       style="-fx-background-radius: 50; -fx-border-radius: 50;" />
+
+            <Button text="Changer photo"
+                    onAction="#handleChooseImage"
+                    style="-fx-background-color: #3498db; -fx-text-fill: white;" />
+
+            <GridPane hgap="10" vgap="15">
+
+                <Label text="Mon Profil" GridPane.columnSpan="2"
+                       style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"
+                       GridPane.halignment="CENTER" />
+
+                <Label text="Nom:" GridPane.rowIndex="1"/>
+                <TextField fx:id="nomField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label text="Prénom:" GridPane.rowIndex="2"/>
+                <TextField fx:id="prenomField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <Label text="Email:" GridPane.rowIndex="3"/>
+                <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <Label text="Téléphone:" GridPane.rowIndex="4"/>
+                <TextField fx:id="telephoneField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                <HBox spacing="10" GridPane.rowIndex="6" GridPane.columnIndex="1">
+                    <Button text="Enregistrer" onAction="#handleSave"
+                            style="-fx-background-color: #2ecc71; -fx-text-fill: white;"/>
+                    <Button text="Annuler" onAction="#handleCancel"
+                            style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+                </HBox>
+
+            </GridPane>
+        </VBox>
+    </VBox>
+</StackPane>

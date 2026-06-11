@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.controllers.GererReclamationsController"
+            style="-fx-background-color: #f4f6f9;">
+
+    <!-- Haut : Bouton de retour + Champ Email + Bouton Rechercher -->
+    <top>
+        <VBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10;">
+            <HBox spacing="15" alignment="CENTER_LEFT" style="-fx-background-color: #1976D2; -fx-padding: 10;">
+                <Button text="Retour" onAction="#retourAjout"
+                        style="-fx-background-color: #B0BEC5; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 10 20;"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10 0 0 0;">
+                <Label text="Entrez votre Email :" />
+                <TextField fx:id="emailSearchField" promptText="email@example.com"/>
+                <Button text="Rechercher mes réclamations" onAction="#filtrerParEmail"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Centre : TableView des réclamations -->
+    <center>
+        <TableView fx:id="tableView" prefHeight="400.0"
+                   style="-fx-background-color: white; -fx-border-radius: 8; -fx-border-color: #B0BEC5;">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50.0" />
+                <TableColumn fx:id="colClient" text="ID Client" prefWidth="100.0" />
+                <TableColumn fx:id="colEmail" text="Email" prefWidth="180.0" />
+                <TableColumn fx:id="colType" text="Type" prefWidth="120.0" />
+                <TableColumn fx:id="colDescription" text="Description" prefWidth="250.0" />
+                <TableColumn fx:id="colDate" text="Date" prefWidth="120.0" />
+                <TableColumn fx:id="colEtat" text="État" prefWidth="100.0" />
+            </columns>
+        </TableView>
+    </center>
+
+    <!-- Bas : Boutons Modifier et Supprimer -->
+    <bottom>
+        <HBox spacing="20" alignment="CENTER" style="-fx-padding: 10; -fx-background-color: #F0F4F8;">
+            <Button fx:id="btnModifier" text="Modifier" onAction="#modifierReclamation"
+                    style="-fx-background-color: #1976D2; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 10 20;"/>
+            <Button fx:id="btnSupprimer" text="Supprimer" onAction="#supprimerReclamation"
+                    style="-fx-background-color: #FF8A65; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 10 20;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane style="-fx-background-color: linear-gradient(to bottom right, #f8f9fa, #1d80d8);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.AfficherEventController">
+
+    <!-- Panneau principal avec effet -->
+    <StackPane AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="20">
+        <Rectangle arcHeight="20" arcWidth="20" fill="#82b4d7" height="626.0" opacity="0.08" width="802.0">
+            <effect>
+                <DropShadow color="#00000040" radius="10" spread="0.05" />
+            </effect>
+        </Rectangle>
+
+        <VBox alignment="TOP_CENTER" maxWidth="700" spacing="15" style="-fx-padding: 20;">
+            <!-- En-tête -->
+            <HBox alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="761.0" spacing="15">
+                <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
+                    <Image url="@/images/list.png" />
+                </ImageView>
+                <Label prefHeight="46.0" prefWidth="412.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Liste des Événements">
+                    <effect>
+                        <DropShadow color="#00000022" offsetY="1" radius="2" />
+                    </effect>
+                </Label>
+            </HBox>
+
+            <Separator>
+                <VBox.margin>
+                    <Insets bottom="10" top="5" />
+                </VBox.margin>
+            </Separator>
+
+            <!-- TableView pour afficher les événements -->
+            <TableView fx:id="tvEvenements" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #e0e0e0;">
+                <columns>
+                    <TableColumn fx:id="colTitre" prefWidth="150" text="Titre" />
+                    <TableColumn fx:id="colDescription" prefWidth="200" text="Description" />
+                    <TableColumn fx:id="colDateDebut" prefWidth="150" text="Date Début" />
+                    <TableColumn fx:id="colDateFin" prefWidth="150" text="Date Fin" />
+                    <TableColumn fx:id="colAdresse" prefWidth="200" text="Adresse" />
+                    <TableColumn fx:id="colCategorie" prefWidth="100" text="Catégorie" />
+                    <TableColumn fx:id="colVisibilite" prefWidth="100" text="Visibilité" />
+                    <TableColumn fx:id="colCapacite" prefWidth="80" text="Capacité" />
+                    <TableColumn prefWidth="100" text="Actions" />
+                </columns>
+                <effect>
+                    <DropShadow color="#00000015" offsetY="1" radius="3" />
+                </effect>
+            </TableView>
+        </VBox>
+    </StackPane>
+</AnchorPane>

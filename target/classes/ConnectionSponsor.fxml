@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.thesphynx.controllers.SponsorAuthController">
+    <tabs>
+        <Tab text="Connexion">
+            <content>
+                <VBox alignment="CENTER" spacing="20" style="-fx-padding: 30;">
+                    <Label text="Connexion Sponsor" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+
+                    <GridPane hgap="10" vgap="10" alignment="CENTER">
+                        <columnConstraints>
+                            <ColumnConstraints prefWidth="100"/>
+                            <ColumnConstraints prefWidth="200"/>
+                        </columnConstraints>
+
+                        <children>
+                            <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                            <TextField fx:id="loginEmailField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                            <Label text="Mot de passe:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                            <PasswordField fx:id="loginPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        </children>
+                    </GridPane>
+
+                    <Button text="Se connecter" onAction="#handleLogin" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                    <Label fx:id="loginErrorLabel" style="-fx-text-fill: red;"/>
+                </VBox>
+            </content>
+        </Tab>
+
+        <Tab text="Inscription">
+            <content>
+                <ScrollPane fitToWidth="true">
+                    <VBox alignment="CENTER" spacing="15" style="-fx-padding: 30;">
+                        <Label text="Inscription Sponsor" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+
+                        <GridPane hgap="10" vgap="10" alignment="CENTER">
+                            <columnConstraints>
+                                <ColumnConstraints prefWidth="150"/>
+                                <ColumnConstraints prefWidth="250"/>
+                            </columnConstraints>
+
+                            <children>
+                                <Label text="Nom entreprise*:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                                <TextField fx:id="registerCompanyField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                                <Label text="Secteur d'activité*:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                                <TextField fx:id="registerSectorField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                                <Label text="Email*:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                                <TextField fx:id="registerEmailField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                                <Label text="Téléphone:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                                <TextField fx:id="registerPhoneField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                                <Label text="Budget:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                                <TextField fx:id="registerBudgetField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                                <Label text="Mot de passe*:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                                <PasswordField fx:id="registerPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+                                <Label text="Confirmer mot de passe*:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+                                <PasswordField fx:id="registerConfirmPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+                                <CheckBox fx:id="registerTermsCheckbox" text="J'accepte les conditions générales" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                            </children>
+                        </GridPane>
+
+                        <Button text="S'inscrire" onAction="#handleRegister" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                        <Label fx:id="registerErrorLabel" style="-fx-text-fill: red;" wrapText="true" maxWidth="400"/>
+                    </VBox>
+                </ScrollPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
