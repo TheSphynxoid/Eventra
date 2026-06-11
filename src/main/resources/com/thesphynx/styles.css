@@ -1,0 +1,310 @@
+/* Styles généraux */
+.root {
+    -fx-background-color: #f0f2f5;
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* ScrollPane personnalisé */
+.custom-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+    -fx-border-width: 0;
+}
+
+.custom-scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Style de la barre de défilement */
+.custom-scroll-pane .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-padding: 0 0 0 1;
+}
+
+.custom-scroll-pane .scroll-bar:vertical .track {
+    -fx-background-color: #f0f2f5;
+    -fx-border-color: transparent;
+    -fx-background-radius: 10;
+}
+
+.custom-scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #b3b3b3;
+    -fx-background-radius: 10;
+}
+
+.custom-scroll-pane .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #999999;
+}
+
+.custom-scroll-pane .scroll-bar:vertical .thumb:pressed {
+    -fx-background-color: #7f7f7f;
+}
+
+.custom-scroll-pane .scroll-bar .increment-button,
+.custom-scroll-pane .scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 5;
+}
+
+.custom-scroll-pane .scroll-bar .increment-arrow,
+.custom-scroll-pane .scroll-bar .decrement-arrow {
+    -fx-background-color: #b3b3b3;
+    -fx-shape: " ";
+    -fx-padding: 3;
+}
+
+/* Conteneur principal */
+.main-container {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0, 0, 2);
+    -fx-padding: 25px;
+    -fx-min-width: 900px; /* Assure une largeur minimale */
+    -fx-max-width: 1100px; /* Limite la largeur maximale pour une meilleure lisibilité */
+    -fx-alignment: center; /* Centre le contenu horizontalement */
+}
+
+/* En-tête */
+.header-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 1, 0, 0, 1);
+}
+
+/* Séparateur */
+.custom-separator {
+    -fx-background-color: #ecf0f1;
+    -fx-opacity: 0.8;
+}
+
+/* GridPane du formulaire */
+.form-grid {
+    -fx-hgap: 12;
+    -fx-vgap: 16; /* Augmenté pour plus d'espacement entre les lignes */
+    -fx-padding: 5 0 20 0;
+}
+
+/* Labels du formulaire */
+.form-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #455a64;
+}
+
+/* Champs de texte */
+.text-input {
+    -fx-background-color: #f5f7fa;
+    -fx-border-color: #d0d7de;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 8px;
+    -fx-font-size: 14px;
+}
+
+.text-input:focused {
+    -fx-border-color: #3498db;
+    -fx-effect: dropshadow(gaussian, rgba(52,152,219,0.3), 2, 0, 0, 0);
+}
+
+/* DatePicker */
+.date-input {
+    -fx-background-color: #f5f7fa;
+    -fx-border-color: #d0d7de;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.date-input .arrow-button {
+    -fx-background-color: #3498db;
+    -fx-background-radius: 0 4 4 0;
+}
+
+.date-input .arrow-button .arrow {
+    -fx-background-color: white;
+}
+
+/* Spinners pour l'heure */
+.time-input {
+    -fx-background-color: #f5f7fa;
+    -fx-border-color: #d0d7de;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.time-input .increment-arrow-button,
+.time-input .decrement-arrow-button {
+    -fx-background-color: #bdc3c7;
+    -fx-background-radius: 2;
+}
+
+.time-input .increment-arrow,
+.time-input .decrement-arrow {
+    -fx-background-color: white;
+}
+
+.time-separator {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #7f8c8d;
+    -fx-padding: 0 0 0 0;
+}
+
+/* ComboBox */
+.combo-input {
+    -fx-background-color: #f5f7fa;
+    -fx-border-color: #d0d7de;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.combo-input .arrow-button {
+    -fx-background-color: #3498db;
+}
+
+.combo-input .arrow {
+    -fx-background-color: white;
+}
+
+/* Spinner */
+.spinner-input {
+    -fx-background-color: #f5f7fa;
+    -fx-border-color: #d0d7de;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+/* WebView (carte) */
+.map-view {
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 1);
+}
+
+/* Contrôles de la carte */
+.map-controls {
+    -fx-padding: 10 0 0 0;
+}
+
+.map-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-max-width: 40px;
+    -fx-max-height: 40px;
+    -fx-padding: 0;
+    -fx-font-size: 16px;
+}
+
+.map-button:hover {
+    -fx-background-color: #2980b9;
+    -fx-cursor: hand;
+}
+
+.location-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-padding: 8 12 8 12;
+}
+
+.location-button:hover {
+    -fx-background-color: #2980b9;
+    -fx-cursor: hand;
+}
+
+/* Radio boutons */
+.radio-group {
+    -fx-padding: 8 0 0 0;
+}
+
+.radio-option {
+    -fx-font-size: 14px;
+    -fx-text-fill: #455a64;
+}
+
+.radio-option .radio {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 50%;
+}
+
+.radio-option:selected .radio .dot {
+    -fx-background-color: #3498db;
+}
+
+/* Information label */
+.info-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d;
+    -fx-font-style: italic;
+}
+
+/* Boutons principaux */
+.button-bar {
+    -fx-padding: 20 0 5 0;
+}
+
+.action-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: normal;
+    -fx-background-radius: 15px;
+    -fx-padding: 6 12 6 12;
+}
+
+.action-button:hover {
+    -fx-background-color: #2980b9;
+    -fx-cursor: hand;
+}
+
+.cancel-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-padding: 8 15 8 15;
+}
+
+.cancel-button:hover {
+    -fx-background-color: #c0392b;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 2, 0, 0, 1);
+}
+
+.add-button {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-padding: 10 20 10 20;
+    -fx-font-size: 15px;
+}
+
+.add-button:hover {
+    -fx-background-color: #27ae60;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 3, 0, 0, 1);
+}
+
+.view-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-padding: 10 20 10 20;
+    -fx-font-size: 15px;
+}
+
+.view-button:hover {
+    -fx-background-color: #2980b9;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 3, 0, 0, 1);
+}
